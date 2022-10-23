@@ -35,6 +35,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: webpub
+      - name: Release
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "*.pdf"
