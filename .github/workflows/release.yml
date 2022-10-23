@@ -6,6 +6,8 @@ on:
       - main
   push:
     branches: [ main ]
+    tags:
+      - "v*"
   pull_request:
     branches: [ main ]
 
@@ -26,10 +28,20 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm install -g @vivliostyle/cli
-      - run: vivliostyle build -o webpub/ -f webpub
+      - run: vivliostyle build -o webpub/ -f webpub -o pdfbook.pdf -f pdf
       - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: webpub
+      - name: "Tagged Release"
+      - run: |
+        echo "done!"
+      - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          prerelease: false
+          files: |
+            LICENSE
+            *.pdf
