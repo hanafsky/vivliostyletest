@@ -36,7 +36,7 @@ jobs:
           BRANCH: gh-pages
           FOLDER: webpub
       - name: Release
-      - uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@v1
         with:
           artifacts: "*.pdf"
           # bodyFile: "body.md"
