@@ -35,11 +35,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           BRANCH: gh-pages
           FOLDER: webpub
-      - name: "Tagged Release"
-      - uses: "marvinpinto/action-automatic-releases@latest"
+      - uses: ncipollo/release-action@v1
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          prerelease: false
-          files: |
-            LICENSE
-            *.pdf
+          artifacts: "*.pdf"
+          # bodyFile: "body.md"
+          token: ${{ secrets.YOUR_GITHUB_TOKEN }}
