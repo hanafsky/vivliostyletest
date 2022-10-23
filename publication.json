@@ -1,0 +1,19 @@
+{
+  "@context": [
+    "https://schema.org",
+    "https://www.w3.org/ns/pub-context"
+  ],
+  "type": "Book",
+  "conformsTo": "https://github.com/vivliostyle/vivliostyle-cli",
+  "author": "hanafsky <kei.hanafusa@gmail.com>",
+  "dateModified": "2022-10-23T05:24:34.269Z",
+  "name": "test",
+  "readingOrder": [
+    {
+      "url": "manuscript.html",
+      "name": "{吾輩|わがはい}は猫である。"
+    }
+  ],
+  "resources": [],
+  "links": []
+}
