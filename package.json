@@ -1,0 +1,16 @@
+{
+  "name": "test",
+  "description": "test",
+  "version": "0.0.0",
+  "author": "hanafsky <kei.hanafusa@gmail.com>",
+  "scripts": {
+    "build": "vivliostyle build",
+    "preview": "vivliostyle preview"
+  },
+  "dependencies": {
+    "@vivliostyle/cli": "latest",
+    "@vivliostyle/theme-techbook": "^0.4.1"
+  },
+  "license": "MIT",
+  "private": true
+}
