@@ -24,8 +24,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-      - run: npm ci
-      - run: npm install -g @vivliostyle/cli
+      - run: npm install 
       - run: vivliostyle build -o webpub/ -f webpub -o pdfbook.pdf -f pdf
       - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
