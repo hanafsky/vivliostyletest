@@ -23,7 +23,7 @@ jobs:
         run: |
           npm install
           npm install -g @vivliostyle/cli
-          npm install @vivliostyle/theme-techbook
+          npm install -g @vivliostyle/theme-techbook
           vivliostyle build -o webpub/ -f webpub -o pdfbook.pdf -f pdf
       - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
