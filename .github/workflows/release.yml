@@ -13,21 +13,18 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: '16'
       - name: Install dependencies and build
         run: |
-          npm ci
-          npm build -o webpub/ -f webpub -o pdfbook.pdf -f pdf
+          npm install
+          npm install -g @vivliostyle/cli
+          npm install @vivliostyle/theme-techbook
+          vivliostyle build -o webpub/ -f webpub -o pdfbook.pdf -f pdf
       - name: Build and Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
